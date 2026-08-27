@@ -7,7 +7,7 @@ Why? Because FFXI runs on **DirectX 8**. Modern Windows absolutely hates DirectX
 To fix this, we need to create a three-part pipeline:
 1. **dgVoodoo 2:** The Translator (Shifts the workload to your GPU)
 2. **Windower:** The Beautifier (Handles resolution scaling and frame rates)
-3. **NVIDIA Control Panel:** The Enforcer (Eliminates micro-stutters and blurry textures)
+3. **GPU Control Panel:** The Enforcer (Eliminates micro-stutters and blurry textures)
 
 Here is exactly how to set them up so they work together without crashing your game.
 
@@ -60,21 +60,26 @@ With the game translated to DX11 and rendering at 4K, we have two final problems
 
 For both brands, you must apply these settings specifically to `pol.exe` (PlayOnline Viewer, which runs the FFXI engine). **Do not apply these globally.**
 
-### For NVIDIA Users
+<details>
+<summary>🟢 <b>Click here for NVIDIA Users Setup</b></summary>
+
 Open your **NVIDIA Control Panel**, go to **Manage 3D Settings -> Program Settings**, click **Add**, and select `pol.exe`. 
 
 Force the following settings:
 * **Power Management Mode: Prefer Maximum Performance.** 
     * *The Nerd Science:* Because FFXI requires so little power, your modern GPU will try to go to sleep to save energy. When you cast a spell, the GPU wakes up, causing a micro-stutter. This setting forces the GPU to stay awake, completely eliminating the hitching.
 * **Anisotropic Filtering (AF): 16x.** 
-    * *The Nerd Science:* In 2002, developers saved memory by aggressively blurring textures that were far away or viewed at an angle (like a long road). Forcing 16x AF tells your GPU to keep floor and wall textures razor-sharp all the way to the horizon.
+    * *The Nerd Science:* In 2002, developers saved memory by aggressively blurring textures that were far away or viewed at an angle. Forcing 16x AF tells your GPU to keep floor and wall textures razor-sharp all the way to the horizon.
 * **Texture Filtering - Negative LOD Bias: Clamp.** 
     * *The Nerd Science:* Required if you use 16x AF. "Clamping" stops distant objects like fences and tree leaves from shimmering or crawling as you run toward them.
 * **All Anti-Aliasing options (FXAA, MSAA): OFF.** Let Windower's supersampling handle this to avoid UI glitches.
 
-> **Image Suggestion (NVIDIA):** Place a screenshot of the NVIDIA Control Panel targeting "pol.exe". Highlight the "Power management mode: Prefer maximum performance" setting. You can also add a small inset image showing a blurry dirt road (AF Off) versus a sharp dirt road stretching into the distance (AF 16x).
+> **Image Suggestion (NVIDIA):** Place a screenshot of the NVIDIA Control Panel targeting "pol.exe". Highlight the "Power management mode: Prefer maximum performance" setting.
+</details>
 
-### For AMD Radeon Users
+<details>
+<summary>🔴 <b>Click here for AMD Radeon Users Setup</b></summary>
+
 Open **AMD Software: Adrenalin Edition**. Go to **Gaming -> Games**, click the three dots in the top right, and select **Add A Game**. Navigate to your FFXI directory and add `pol.exe`. Click on it to adjust its specific profile.
 
 Force the following settings in the **Graphics** tab:
@@ -87,7 +92,8 @@ Force the following settings in the **Graphics** tab:
     * *The Nerd Science:* AMD tries to optimize texture formats on the fly to boost performance. In old, wrapped games like FFXI, this can cause textures to flicker or corrupt. Turn it off.
 * **(Optional) Fix the AMD Sleep Stutter:** If you still get micro-stutters as you run around, your AMD card is falling asleep. Go to the **Performance -> Tuning** tab at the top. Select `pol.exe`, choose **Custom**, and enable **GPU Tuning**. Turn on **Advanced Control** and drag the **Min Frequency (MHz)** slider up so it is within 100-200 MHz of your Max Frequency. This forces the card to stay awake.
 
-> **Image Suggestion (AMD):** Place a screenshot of the AMD Adrenalin profile for "pol.exe". Highlight the "Surface Format Optimization: Disabled" and "Anisotropic Filtering: 16x" settings. 
+> **Image Suggestion (AMD):** Place a screenshot of the AMD Adrenalin profile for "pol.exe". Highlight the "Surface Format Optimization: Disabled" and "Anisotropic Filtering: 16x" settings.
+</details>
 
 ---
 
@@ -132,10 +138,12 @@ Before we install massive textures, we need to give dgVoodoo more memory to work
 
 **You are done.** When you log into the game, XIPivot will automatically load the HD textures. If you ever want to see the original 2002 graphics to compare, just type `//pivot list` to see active mods, or remove "AshenbubsHD" from your settings file to return to vanilla.
 
+---
+
 ### The Final Checklist
 If you followed this guide, you have perfectly compartmentalized the workload:
 * **dgVoodoo** is fixing the engine.
 * **Windower** is fixing the jagged edges and the frame rate.
-* **NVIDIA** is fixing the blurry textures and the stuttering. 
+* **GPU Control Panels** are fixing the blurry textures and the stuttering. 
 
 Boot up the game, head to your favorite zone, and enjoy Vana'diel exactly how your nostalgia remembers it.
