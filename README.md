@@ -1,4 +1,4 @@
-# FFXI Modernization Guide: Taming the 2002 Engine
+# FFXI Modernization Guide - (Updated August 27th, 2026)
 
 *Final Fantasy XI* is a classic MMO design, but under the hood, it’s powered by a graphics engine built in 2002. If you boot up the game natively on a gaming rig with a GPU like a Nvidia GTX 1080 or better—you are going to get jagged edges, blurry textures, and bizarre frame rate drops when the screen gets crowded. 
 
@@ -13,7 +13,7 @@ Here is exactly how to set them up so they work together without crashing your g
 
 ---
 
-## Phase 1: dgVoodoo 2
+## Part 1: dgVoodoo 2
 
 Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancient DirectX 8 code that FFXI spits out and instantly translates it into modern DirectX 11. Suddenly, your modern graphics card knows exactly how to render the game, giving you a massive boost in stability.
 
@@ -33,7 +33,7 @@ Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancien
 
 ---
 
-## Phase 2: Windower (The Beautifier)
+## Part 2: Windower
 
 Now that your GPU is actually awake and processing the game, we have an absurd amount of overhead power to spend on making the game look gorgeous. We do this in Windower using a brute-force technique called **Supersampling**.
 
@@ -54,7 +54,7 @@ This completely destroys jagged, "stair-step" edges on 3D models. It is vastly s
 
 ---
 
-## Phase 3: GPU Control Panels (The Enforcer)
+## Part 3: GPU Control Panels 
 
 With the game translated to DX11 and rendering at 4K, we have two final problems to solve: micro-stutters and blurry ground textures. We solve these at the hardware level, but how you do this depends on whether you are Team Green (NVIDIA) or Team Red (AMD). 
 
@@ -97,7 +97,7 @@ Force the following settings in the **Graphics** tab:
 
 ---
 
-## Phase 4: XIPivot and HD Textures (The Facelift)
+## Part 4: XIPivot and HD Textures
 
 Now that the engine is stable, rendering at 4K, and running at a smooth 60 FPS, it's time to fix the actual 2002 art assets. We do this using HD Texture packs (like the legendary **AshenbubsHD** project), which use AI upscaling and manual touch-ups to make the game look like a modern remaster.
 
