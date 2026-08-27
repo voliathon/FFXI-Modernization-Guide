@@ -1,19 +1,19 @@
 # FFXI Modernization Guide: Taming the 2002 Engine
 
-*Final Fantasy XI* is a masterpiece of classic MMO design, but under the hood, it’s powered by a graphics engine built in 2002. If you boot up the game natively on a modern gaming rig—even one packing a monster GPU like a GTX 1080 or better—you are going to get jagged edges, blurry textures, and bizarre frame rate drops when the screen gets crowded. 
+*Final Fantasy XI* is a classic MMO design, but under the hood, it’s powered by a graphics engine built in 2002. If you boot up the game natively on a gaming rig with a GPU like a Nvidia GTX 1080 or better—you are going to get jagged edges, blurry textures, and bizarre frame rate drops when the screen gets crowded. 
 
 Why? Because FFXI runs on **DirectX 8**. Modern Windows absolutely hates DirectX 8. It forces your CPU to do all the heavy lifting while your expensive graphics card essentially sits there asleep.
 
 To fix this, we need to create a three-part pipeline:
-1. **dgVoodoo 2:** The Translator (Shifts the workload to your GPU)
-2. **Windower:** The Beautifier (Handles resolution scaling and frame rates)
-3. **GPU Control Panel:** The Enforcer (Eliminates micro-stutters and blurry textures)
+1. **dgVoodoo 2:**  (Shifts the workload to your GPU)
+2. **Windower:**  (Handles resolution scaling and frame rates)
+3. **GPU Control Panel:** (Eliminates micro-stutters and blurry textures)
 
 Here is exactly how to set them up so they work together without crashing your game.
 
 ---
 
-## Phase 1: dgVoodoo 2 (The Translator)
+## Phase 1: dgVoodoo 2
 
 Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancient DirectX 8 code that FFXI spits out and instantly translates it into modern DirectX 11. Suddenly, your modern graphics card knows exactly how to render the game, giving you a massive boost in stability.
 
