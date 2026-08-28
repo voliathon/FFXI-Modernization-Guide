@@ -115,7 +115,7 @@ If you aren't sure how much VRAM your specific graphics card has to budget for y
 
 ---
 
-## Part 2: Windower
+## Part 2A: Windower
 
 Now that your GPU is actually awake and processing the game, we have an absurd amount of overhead power to spend on making the game look gorgeous. We do this in Windower using a brute-force technique called **Supersampling**.
 
@@ -131,6 +131,10 @@ This completely destroys jagged, "stair-step" edges on 3D models. It is vastly s
 1. In your Windower profile edit screen, set your **UI Resolution** to match your monitor.
 2. Set your **Background Resolution** to exactly double that size. 
 3. **Uncap the frames:** Load the `Config` plugin in Windower. Once in-game, type `//config FrameRateDivisor 1` in the chat to unlock the game from its native 29.4 FPS cap up to a buttery smooth 60 FPS.
+
+
+## Part 2B: Ashita
+The idea is comparable to Windower. 
 
 
 ---
