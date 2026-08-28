@@ -20,14 +20,23 @@ Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancien
 **The Golden Rule of dgVoodoo in FFXI:** You only use it for the translation. You do **not** use it to force graphical upgrades like resolution or Anti-Aliasing. If you do, it will fight with Windower and cause UI glitches.
 
 **How to set it up:**
-1. Download dgVoodoo 2 and extract it.
-2. Navigate into its `MS\x86` folder and copy `D3D8.dll`. 
-3. Paste that file, along with `dgVoodooCpl.exe` (the control panel), directly into your FFXI `PlayOnlineViewer` folder. 
-4. Open the control panel and set the following in the **DirectX Tab**:
+1. Download dgVoodoo 2 and extract it. <a href="https://github.com/dege-diosg/dgVoodoo2/releases/tag/v2.87.3" target="_blank" rel="noopener noreferrer">https://github.com/dege-diosg/dgVoodoo2/releases/tag/v2.87.3</a>
+   - You will want the <a href="https://github.com/dege-diosg/dgVoodoo2/releases/download/v2.87.3/dgVoodoo2_87_3.zip">https://github.com/dege-diosg/dgVoodoo2/releases/download/v2.87.3/dgVoodoo2_87_3.zip</a> - 8/27/2026
+2. Navigate into its `MS\x86` folder and copy `D3D8.dll`, `D3D9.dll`, `D3Dlmm.dll`, `DDraw.dll`.<br>
+   <img src="images/dgVoodoo2_87_3-B.png">
+4. Paste those files, along with `dgVoodooCpl.exe`(<b>the control panel</b>) and `dgVoodoo.conf` a , directly into your FFXI `PlayOnlineViewer` folder.<br>
+   <img src="images/dgVoodoo2_87_3-A.png">
+5. Open the control panel and set the following in the **General Tab**:
+   * **Output API:** Direct3D 11 (feature level 11.0)
+   * **Adapter(s) to use / enable:** < YOUR VIDEO CARD >
+   * **Appearance:** > Full Screen
+   <img src="images/dg-general.png">
+7. Open the control panel and set the following in the **DirectX Tab**:
     * **VRAM:** 1024 MB (Plenty for standard HD play. Only go higher if using massive 4K texture mods).
     * **Resolution:** Unforced (Crucial! Let Windower handle this).
     * **Filtering & Antialiasing:** App Driven.
     * **Fast video memory access:** UNCHECK this (it corrupts Windower screenshots).
+    <img src="images/dg-directx.png">
 
 # GPU VRAM Comparison Guide
 
@@ -54,9 +63,6 @@ A quick-reference guide comparing Video RAM (VRAM) capacities across modern and 
 * **12 GB - 16 GB:** The current modern baseline sweet spot for demanding AAA titles at 1440p resolution with maxed settings.
 * **20 GB+:** Required for zero-compromise native 4K gaming, high-end 3D rendering workflows, and local AI model generation.
 
-
-
-> **Image Suggestion:** Place an image here showing the dgVoodoo "DirectX" tab. Draw a bright red box around the "Resolution: Unforced" and "Antialiasing: App Driven" drop-downs to emphasize that users should NOT crank these settings up.
 
 ---
 
