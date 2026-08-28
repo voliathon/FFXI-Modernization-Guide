@@ -22,15 +22,20 @@ Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancien
 **How to set it up:**
 1. Download dgVoodoo 2 and extract it. <a href="https://github.com/dege-diosg/dgVoodoo2/releases/tag/v2.87.3" target="_blank" rel="noopener noreferrer">https://github.com/dege-diosg/dgVoodoo2/releases/tag/v2.87.3</a>
    - You will want the <a href="https://github.com/dege-diosg/dgVoodoo2/releases/download/v2.87.3/dgVoodoo2_87_3.zip">https://github.com/dege-diosg/dgVoodoo2/releases/download/v2.87.3/dgVoodoo2_87_3.zip</a> - 8/27/2026
+   - 
 2. Navigate into its `MS\x86` folder and copy `D3D8.dll`, `D3D9.dll`, `D3Dlmm.dll`, `DDraw.dll`.<br>
    <img src="images/dgVoodoo2_87_3-B.png">
+   
 4. Paste those files, along with `dgVoodooCpl.exe`(<b>the control panel</b>) and `dgVoodoo.conf` a , directly into your FFXI `PlayOnlineViewer` folder.<br>
-   <img src="images/dgVoodoo2_87_3-A.png">
+   <img src="images/dgVoodoo2_87_3-A.png"><br>
+      <img src="images/PlayOnlineViewer.png">
+      
 5. Open the control panel and set the following in the **General Tab**:
    * **Output API:** Direct3D 11 (feature level 11.0)
    * **Adapter(s) to use / enable:** < YOUR VIDEO CARD >
-   * **Appearance:** > Full Screen
-   <img src="images/dg-general.png">
+   * **Appearance:** > Full Screen <br>
+   <img src="images/dg-general.png"> 
+   
 7. Open the control panel and set the following in the **DirectX Tab**:
     * **VRAM:** 1024 MB (Plenty for standard HD play. Only go higher if using massive 4K texture mods).
     * **Resolution:** Unforced (Crucial! Let Windower handle this).
@@ -83,7 +88,6 @@ This completely destroys jagged, "stair-step" edges on 3D models. It is vastly s
 2. Set your **Background Resolution** to exactly double that size. 
 3. **Uncap the frames:** Load the `Config` plugin in Windower. Once in-game, type `//config FrameRateDivisor 1` in the chat to unlock the game from its native 29.4 FPS cap up to a buttery smooth 60 FPS.
 
-> **Image Suggestion:** Place a side-by-side comparison image here. On the left, show a zoomed-in screenshot of a character model with jagged, pixelated edges (No Supersampling). On the right, show the exact same character with perfectly smooth edges (Supersampling enabled via double background resolution).
 
 ---
 
