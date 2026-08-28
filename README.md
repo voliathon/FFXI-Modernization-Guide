@@ -139,6 +139,16 @@ This completely destroys jagged, "stair-step" edges on 3D models. It is vastly s
 
 5. **Frames to 60 FPS:** Load the `Config` plugin in Windower. Once in-game, type `//config FrameRateDivisor 1` in the chat to unlock the game from its native 29.4 FPS cap up to a buttery smooth 60 FPS.
 
+## MIP Mapping and Bump Mapping
+So technically they matter. Bump mapping you think depth of an image.  The Illusion of Depth.  It's a lighting trick more than anything. 
+An example off mind is like the ocean in your Mog House you would notice it better.  If you turn it on, the engine calculates fake 3D ripples and waves that react to the game's lighting. 
+
+For MIP Mapping you could turn it ON since the 16x Anistropic Filtering is enabled in the GPU Control panel.  Technically without it 16x AF breaks cause it relies on MIP Mapping. I'll reverify that later today.   If say you are far away from idk.// An NPC shop. The farther away you get from it, a low texture is usually put into place and our brains do not process the blur going on usually. If there is a shimmer that is due to MIP Mapping being turned off.
+
+If MIP Mapping is ON (Jack it up to 6 on the Windower Slider), the gpu takes those mip-maps, angles them, and give you a better, sharper, shimmer-free image. 
+Typically I have them off cause I'm of the opinion as I play ffxi I know what the horrible looking roads look like and the horrible wall textures.
+I usually have stuff disabled for Mip Mapping and Bump Mapping
+
 
 ## Part 2B: Ashita
 The idea is comparable to Windower. 
