@@ -128,9 +128,16 @@ If you set your UI resolution to `1920x1080`, but set your Background Resolution
 This completely destroys jagged, "stair-step" edges on 3D models. It is vastly superior to standard Anti-Aliasing (MSAA) because it doesn't cause weird graphical halos around the 2D UI elements. 
 
 **How to set it up:**
-1. In your Windower profile edit screen, set your **UI Resolution** to match your monitor.
-2. Set your **Background Resolution** to exactly double that size. 
-3. **Uncap the frames:** Load the `Config` plugin in Windower. Once in-game, type `//config FrameRateDivisor 1` in the chat to unlock the game from its native 29.4 FPS cap up to a buttery smooth 60 FPS.
+1. Open your Windower launcher and click the pencil icon to edit your profile.
+2. Go to the Windower tab.
+3. You will see your Resolution (this is your Window/UI size).
+4. Go to the Game tab and  you will see a toggle for Super Sampling. <br>
+   Setting Super Sampling to tells Windower to automatically double your Background Resolution behind the scenes.
+   Before Windower existed (or if you play the retail game without it), you had to open FINAL FANTASY XI Config.exe located in your SquareEnix\FINAL FANTASY XI\ToolsUS folder.
+   In that official tool, under the "Screen Resolution" tab, Square Enix separates it explicitly into Overlay Graphics Resolution (the UI) and Background Resolution (the 3D world).
+   <i>The Catch:<i> Because you are using Windower, Windower's profile settings will completely override whatever you put in the official FFXI Config tool. So, leave the official tool alone, and just crank up that Super Sampling setting inside your Windower profile.
+
+5. **Frames to 60 FPS:** Load the `Config` plugin in Windower. Once in-game, type `//config FrameRateDivisor 1` in the chat to unlock the game from its native 29.4 FPS cap up to a buttery smooth 60 FPS.
 
 
 ## Part 2B: Ashita
