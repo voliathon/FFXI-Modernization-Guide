@@ -43,11 +43,56 @@ Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancien
     * **Fast video memory access:** UNCHECK this (it corrupts Windower screenshots).
     <img src="images/dg-directx.png">
 
-# GPU VRAM Comparison Guide
+### 🧠 The Multi-boxing Math: VRAM, AshenbubsHD, and Avoiding Catastrophe
 
-A quick-reference guide comparing Video RAM (VRAM) capacities across modern and legacy graphics card generations from NVIDIA, AMD, and Intel.
+When you configure dgVoodoo, the **VRAM** setting dictates how much Video RAM is allocated **per instance** of the game. *Final Fantasy XI* natively doesn't use much, but when you introduce HD texture packs like AshenbubsHD project, the game needs a massive memory buffer to hold those upscaled assets without flickering or turning the screen black.
 
-## 📊 Comprehensive VRAM Comparison Chart
+Because of this, the guide recommends changing your VRAM from 1024 MB to 2048 MB or 4096 MB. 
+
+However, **dgVoodoo multiplies this allocation by the number of characters you are multi-boxing.** If you don't calculate this against your specific graphics card's physical limits, it can be cataclysmic. When a GPU runs out of VRAM, it starts dumping data into your system RAM, resulting in single-digit framerates, black screens, or an instant, hard crash to the desktop. 
+
+#### 📊 Visualizing the VRAM Stack
+
+Let's look at how this stacks up on a standard **8GB GPU** (like the GTX 1080).
+
+```text
+[==================== GPU VRAM LIMIT: 8192 MB (8GB) ====================]
+
+🟢 THE GOOD SETUP: 3 Characters + AshenbubsHD (2048 MB per instance)
+Instance 1: [████████] (2GB)
+Instance 2: [████████] (2GB)
+Instance 3: [████████] (2GB)
+Overhead:   [        ] (2GB remaining for Windows/Discord/Browser) 
+Result:     Silky smooth gameplay.
+
+🔴 THE CATACLYSMIC SETUP: 3 Characters + AshenbubsHD (4096 MB per instance)
+Instance 1: [████████████████] (4GB)
+Instance 2: [████████████████] (4GB)
+Instance 3: [████████████CRASH (Trying to pull 12GB from an 8GB card)
+Result:     The engine panics, Windower violently crashes, and your GPU driver restarts.
+```
+
+#### ✅ A Good Example (The "Sweet Spot")
+You have an **NVIDIA RTX 4070 (12GB)** and you want to multi-box **three characters** while using **AshenbubsHD**. 
+* You set dgVoodoo VRAM to **4096 MB**. 
+* 3 instances x 4GB = **12GB**. 
+* While this hits your exact limit, FFXI won't constantly pin the VRAM at exactly 4GB per instance; this just sets the maximum allowable ceiling. Your 12GB card handles it perfectly, and the HD textures look phenomenal across all three windows.
+
+#### ❌ A Bad Example (The "Cataclysm")
+You have an **NVIDIA GTX 1080 (8GB)** and you want to multi-box **four characters** with **AshenbubsHD**. 
+* Thinking "more is better," you set dgVoodoo VRAM to **4096 MB**. 
+* 4 instances x 4GB = **16GB**. 
+* The moment you log in that third and fourth character, the game demands double the physical memory your GTX 1080 has. The game completely locks up, your monitors might flash black as the display driver times out, and all four game instances crash. 
+* **The Fix:** Drop the dgVoodoo VRAM to **2048 MB** (4 instances x 2GB = 8GB) or disable AshenbubsHD on the "mule" characters so they can run safely at 1024 MB.
+
+---
+
+### GPU VRAM Comparison Guide
+
+If you aren't sure how much VRAM your specific graphics card has to budget for your multi-boxing setup, use the collapsible chart below.
+
+<details>
+<summary><b>Click here to view the Comprehensive VRAM Comparison Chart</b></summary>
 
 | VRAM Size | 🟢 NVIDIA GeForce Models | 🔴 AMD Radeon Models | 🔵 Intel Arc Models |
 | :--- | :--- | :--- | :--- |
@@ -61,12 +106,11 @@ A quick-reference guide comparing Video RAM (VRAM) capacities across modern and 
 | **8 GB** | RTX 5050 <br> RTX 4060 Ti (8GB) / 4060 <br> RTX 3070 Ti / 3070 <br> RTX 3060 Ti <br> GTX 1080 | RX 9060 <br> RX 7600 <br> RX 6600 XT / 6600 | — |
 | **6 GB** | RTX 2060 <br> GTX 1660 Super / 1660 Ti | RX 5600 XT | — |
 
----
-
-## 💡 Quick Baseline Recommendations
+#### 💡 Quick Baseline Recommendations
 * **8 GB:** Good for budget-oriented 1080p gaming and popular competitive esports titles.
 * **12 GB - 16 GB:** The current modern baseline sweet spot for demanding AAA titles at 1440p resolution with maxed settings.
 * **20 GB+:** Required for zero-compromise native 4K gaming, high-end 3D rendering workflows, and local AI model generation.
+</details>
 
 
 ---
