@@ -155,7 +155,10 @@ Force the following settings:
     * *The Nerd Science:* Required if you use 16x AF. "Clamping" stops distant objects like fences and tree leaves from shimmering or crawling as you run toward them.
 * **All Anti-Aliasing options (FXAA, MSAA): OFF.** Let Windower's supersampling handle this to avoid UI glitches.
 
-> **Image Suggestion (NVIDIA):** Place a screenshot of the NVIDIA Control Panel targeting "pol.exe". Highlight the "Power management mode: Prefer maximum performance" setting.
+<img src="images/nvidia-control-panel.png"><br>
+<img src="images/nvcp1.png">
+<img src="images/nvcp2.png">
+<img src="images/nvcp3.png">
 </details>
 
 <details>
