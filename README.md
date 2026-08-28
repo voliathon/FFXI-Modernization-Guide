@@ -29,6 +29,33 @@ Think of dgVoodoo 2 as a real-time language translator. It intercepts the ancien
     * **Filtering & Antialiasing:** App Driven.
     * **Fast video memory access:** UNCHECK this (it corrupts Windower screenshots).
 
+# GPU VRAM Comparison Guide
+
+A quick-reference guide comparing Video RAM (VRAM) capacities across modern and legacy graphics card generations from NVIDIA, AMD, and Intel.
+
+## 📊 Comprehensive VRAM Comparison Chart
+
+| VRAM Size | 🟢 NVIDIA GeForce Models | 🔴 AMD Radeon Models | 🔵 Intel Arc Models |
+| :--- | :--- | :--- | :--- |
+| **32 GB** | RTX 5090 | — | — |
+| **24 GB** | RTX 4090 <br> RTX 3090 Ti / 3090 | RX 7900 XTX | — |
+| **20 GB** | — | RX 7900 XT | — |
+| **16 GB** | RTX 5080 <br> RTX 5070 Ti <br> RTX 4080 Super / 4080 <br> RTX 4070 Ti Super <br> RTX 4060 Ti (16GB) | RX 9070 XT / 9070 <br> RX 9060 XT (16GB) <br> RX 7900 GRE <br> RX 7800 XT <br> RX 7600 XT <br> RX 6950 XT / 6900 XT | — |
+| **12 GB** | RTX 5060 <br> RTX 4070 Ti <br> RTX 4070 Super / 4070 <br> RTX 3080 Ti / 3080 (12GB) <br> RTX 3060 (12GB) | RX 9070 GRE <br> RX 7700 XT | Arc B580 |
+| **11 GB** | GTX 1080 Ti <br> RTX 2080 Ti | — | — |
+| **10 GB** | RTX 3080 (10GB) | — | Arc B570 |
+| **8 GB** | RTX 5050 <br> RTX 4060 Ti (8GB) / 4060 <br> RTX 3070 Ti / 3070 <br> RTX 3060 Ti <br> GTX 1080 | RX 9060 <br> RX 7600 <br> RX 6600 XT / 6600 | — |
+| **6 GB** | RTX 2060 <br> GTX 1660 Super / 1660 Ti | RX 5600 XT | — |
+
+---
+
+## 💡 Quick Baseline Recommendations
+* **8 GB:** Good for budget-oriented 1080p gaming and popular competitive esports titles.
+* **12 GB - 16 GB:** The current modern baseline sweet spot for demanding AAA titles at 1440p resolution with maxed settings.
+* **20 GB+:** Required for zero-compromise native 4K gaming, high-end 3D rendering workflows, and local AI model generation.
+
+
+
 > **Image Suggestion:** Place an image here showing the dgVoodoo "DirectX" tab. Draw a bright red box around the "Resolution: Unforced" and "Antialiasing: App Driven" drop-downs to emphasize that users should NOT crank these settings up.
 
 ---
