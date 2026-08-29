@@ -215,10 +215,11 @@ Before we install massive textures, we need to give dgVoodoo more memory to work
 3. Change **VRAM** from `1024 MB` to `2048 MB` or `4096 MB`. *(Your GTX 1080 has 8GB, so 4096 MB is perfectly safe unless you are multi-boxing 3+ characters).*
 4. Click Apply and OK.
 
-### 2. Install XIPivot
+### 2. Install XIPivot (Windower)
 1. Open your **Windower** launcher.
-2. Go to the **Addons** tab, find **XIPivot**, and turn it on (download/enable it).
-3. Right-click the XIPivot icon and make sure it is set to "Auto Load."
+2. Download <b>XIPivot</b> from https://github.com/HealsCodes/XIPivot/releases/tag/v0.4.7
+3. You can drag and drop the `XIPivot` folder from the XIPivot_Windower_v0.4.7.zip to your `Windower4\addons\` folder.
+4. Follow the instructions located in the README.md file in the XIPivot addon to further set things up for your custom .dat files
 
 ### 3. Install the Textures (AshenbubsHD)
 1. Download your HD texture packs of choice (e.g., AshenbubsHD Zones, UI, or Characters).
